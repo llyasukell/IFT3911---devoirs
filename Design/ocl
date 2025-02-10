@@ -1,0 +1,35 @@
+boat can be assigned to multiple itineraries as long as they dont overlap
+
+#airport, naval port and station id is 3 unique letters
+context Port
+	inv: self.id.size() = 3 and self.id.asSet().size() = 3
+
+#flight id first 2 letters unique to company, following numbers unique to flight within same company
+context Trip
+	inv: self.id[1:2] is String and self.id[3:] is Interger
+
+#airport origin and arrival are different
+context Flight
+	inv: self.portList[1] <> self.portList[2] and self.portList.size() = 2
+
+#all seats and cabins in same section are the same price
+context Company
+	inv 
+
+#itinerary max 21 days
+#itinerary first and final port are the same
+context Itinerary
+	inv: self.arrivalTime - self.departureTime <= 21 days
+	inv: self.portList[1] = self.portList[-1]
+
+#client can reserve available seats or cabins
+context Space
+	inv:
+
+#a reserved seat becomes assigned once paid for
+context Client::payForSeat(self.reservation)
+	post: self.reservation.seat.assigned = True
+
+#I made these
+context Train
+	init: self.sections = {F, E} and self.sections.forAll(disposition = S)
