@@ -192,7 +192,7 @@
             </tr>
         </tbody>
     </table>
-       <h2>
+    <h2>
         Hypothèses</h2>
     <p>
         J'ai supposé que...
@@ -210,7 +210,7 @@
     <h2>
         Tâche 2 : Produire le design du logiciel à partir du modèle du domaine</h2>
     <p>
-        diagramme de classe logiciel, diagramme de séquence ou de collaboration et diagramme de paquets. Portez une attention particulière sur, entre autres : le nom des classes, associations et paquets, la visibilité et type des attributs, la visibilité et signature des opérations, les rôles, les cardinalités et les types d'associations. Montrez uniquement les diagrammes de séquence/collaboration pour les actions client : vérifier les vols/lignes/itinéraires, réserver un siège et payer un siège. Chaque membre de l'équipe doit être responsable d'un diagramme de séquence. Identifiez clairement le responsable.
+        Nous avons ensuite produit le diagramme de classe logiciel, à partir duquel nous avons créé les diagrammes de séquence pour les actions client (vérifier les vols/lignes/itinéraires, réserver un siège et payer un siège). Chaque membre de l'équipe a pris la responsabilité d'un diagramme de séquence tel que décrit dans le tableau des tâches plus haut. Pour terminer, nous avons créé le diagramme de paquets en groupant les classes appropriées ensemble.
     </p>
     <ul>
         <li>Voici un <a href="DM1_Design.vpp">lien</a> vers les fichiers, qui sont rassemblés dans un seul projet Visual Paradigm.</li>
@@ -220,7 +220,7 @@
         <h2>
         Tâche 3 : Rédiger, en OCL, les contraintes précédent la mention [OCL] dans l'énoncé</h2>
     <p>
-        Notez qu'il peut y avoir la même contrainte pour différents modes de voyage. Dans ce cas, assurez-vous d'avoir une seule même contrainte pour tous les modes de voyage quand c'est possible. Les contraintes pour la réservation et le paiement doivent être formulées comme pré et postconditions des opérations réserver() et payer().
+        Les contraintes ont été rédigées de façons à rassembler tous les modes de voyages sous une seule même contrainte lorsque c'était possible.
     </p>
     <ul>
         <li>Voici un <a href="Contraintes_OCL">lien</a> vers le fichier.</li>
@@ -228,7 +228,7 @@
         <h2>
         Tâche 4 : Justifiez toutes les décisions que vous jugez nécessaires</h2>
     <p>
-        Ce rapport remplit la tâche 4 de par son contenu précédent.
+        La création de la classe Criteria, qui contient les paramètres d'une recherche de vols, nous a paru nécessaire afin de rassembler les attributs permettant d'identifier un vol, un itinéraire ou un trajet et avec lesquels un administrateur ou un client souhaiterait effectuer sa recherche.
     </p>
      
 </body></html>
