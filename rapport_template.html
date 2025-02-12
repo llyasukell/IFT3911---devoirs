@@ -1,4 +1,3 @@
-
 <!-- saved from url=(0057)https://www.iro.umontreal.ca/~syriani/courses/rapport.htm -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>IFT3911 DM1 - Équipe Bravo</title>
@@ -34,7 +33,7 @@
         <br>
         <span style="font-weight: bold;">Courriel: </span>matteo.caron-mondestin@umontreal.ca
         <br>
-        <span style="font-weight: bold;">temps mis: </span>X heures
+        <span style="font-weight: bold;">temps mis: </span>12 heures
     </p>
     <p>
         <span style="font-weight: bold;">Nom: </span>Mamour Ndiaye
@@ -43,7 +42,7 @@
         <br>
         <span style="font-weight: bold;">Courriel: </span>mamour.ndiaye@umontreal.ca
         <br>
-        <span style="font-weight: bold;">temps mis: </span>X heures
+        <span style="font-weight: bold;">temps mis: </span>12 heures
     </p>
     <p>
         <span style="font-weight: bold;">Nom: </span>Lisanne Duquette
@@ -52,7 +51,7 @@
         <br>
         <span style="font-weight: bold;">Courriel: </span>lisanne.duquette@umontreal.ca
         <br>
-        <span style="font-weight: bold;">Temps mis: </span>X heures
+        <span style="font-weight: bold;">Temps mis: </span>12 heures
     </p>
     <h2>
         Distribution des tâches</h2>
@@ -192,7 +191,7 @@
             </tr>
         </tbody>
     </table>
-            <h2>
+        <h2>
         Hypothèses</h2>
     <p>
         Nous avons tenté de suivre l'énoncé du devoir le plus exactement possible et n'avons pas posé d'hypothèses autres que les détails fournis ci-dessous pour la conception du domaine et du design.
@@ -203,20 +202,50 @@
         Nous avons tout d'abord produit chacun de notre côté les diagrammes de classe conceptuels pour le voyage aérien, le voyage naval et le voyage ferroviaire, incluant pour chacun le volet administratif et le volet client. Nous nous sommes ensuite réunis pour vérifier les points communs aux trois diagrammes pouvant être combinés, puis nous avons créé le diagramme de classe conceptuel final en combinant les efforts séparés. À cette étape, nous avons pris quelques décisions pour simplifier notre diagramme de classe. Pour débuter, nous avons établi qu'un aéroport, qu'un port et qu'une gare seraient tous considérés comme étant un point de départ et/ou d'arrivée et que nous pouvions les rassembler sous une même classe partageant les attributs de nom et de ville et en ajoutant un type les identifiant en tant qu'aéroport, port ou gare. De la même façon, nous avons créé une seule classe pour déterminer les sections attribuables à un mode de transport, qui seraient ensuite précisées selon le mode de transport choisi. Par la suite, nous avons créé un diagramme pour illustrer les cas d'utilisation afin de nous guider dans la conception des diagrammes de séquence système. Finalement, nous avons rédigé les diagrammes de séquence système pour chaque utilisation par l'administrateur (consulter les vols par compagnie, consulter les vols par origine, créer une fiche, modifier une fiche et supprimer une fiche dans le système) et pour chaque utilisation par le client (consulter les vols par origine, réserver un siège, payer un siège). Les diagrammes de séquence système pour les utilisation par l'administrateur présentent le cas de la création, de la modification et de la suppression d'un trajet mais pourraient être facilement réutilisés pour illustrer la création, modification et suppression de ports, de compagnies et de sections associées aux avions, paquebots et trains.
     </p>
     <ul>
-        <li>Voici un <a href="DM1_Domaine.vpp">lien</a> vers les fichiers, qui sont rassemblés dans un seul projet Visual Paradigm.</li>
-        <li>Voir la section Diagrammes UML dans Visual Paradigm pour trouver les fichiers :</li>
+        <li>Voici un <a href="DM1_Domaine.vpp">lien</a> vers les fichiers, qui sont rassemblés dans un seul projet Visual Paradigm, tel que démontré dans la première image.</li>
+        <li>Suivent ci-dessous les cas d'utilisation, le diagramme de classe conceptuel, les 5 diagrammes séquence système administrateur et les 3 diagrammes séquence système client.</li>
     </ul>
-    <img src="Domaine.jpg" width="200px" alt="Domaine">
+        <img src="img/Domaine.jpg" width="200px" alt="Domaine"><br><br>
+        <figcaption>Cas d'utilisation</figcaption>
+        <img src="img/Domaine/UC_domaine.jpg" width="800px" alt="UC_Domaine"><br><br>
+        <figcaption>Diagramme de classe conceptuel</figcaption>
+        <img src="img/Domaine/DC_domaine.jpg" width="800px" alt="DC_Domaine"><br><br>
+        <figcaption>Diagramme séquence système - Administrateur - Consulter les vols par compagnie</figcaption>
+        <img src="img/Domaine/DSS_a1.jpg" width="800px" alt="DSS_a1"><br><br>
+        <figcaption>Diagramme séquence système - Administrateur - Consulter les vols par origine</figcaption>
+        <img src="img/Domaine/DSS_a2.jpg" width="800px" alt="DSS_a2"><br><br>
+        <figcaption>Diagramme séquence système - Administrateur - Créer</figcaption>
+        <img src="img/Domaine/DSS_a3.jpg" width="800px" alt="DSS_a3"><br><br>
+        <figcaption>Diagramme séquence système - Administrateur - Modifier</figcaption>
+        <img src="img/Domaine/DSS_a4.jpg" width="800px" alt="DSS_a4"><br><br>
+        <figcaption>Diagramme séquence système - Administrateur - Supprimer</figcaption>
+        <img src="img/Domaine/DSS_a5.jpg" width="800px" alt="DSS_a5"><br><br>
+        <figcaption>Diagramme de classe conceptuel - Client - Consulter les vols par origine</figcaption>
+        <img src="img/Domaine/DSS_c1.jpg" width="800px" alt="DSS_c1"><br><br>
+        <figcaption>Diagramme de classe conceptuel - Client - Payer</figcaption>
+        <img src="img/Domaine/DSS_c2.jpg" width="800px" alt="DSS_c2"><br><br>
+        <figcaption>Diagramme de classe conceptuel - Réserver</figcaption>
+        <img src="img/Domaine/DSS_c3.jpg" width="800px" alt="DSS_c3"><br><br>
     <h2>
         Tâche 2 : Produire le design du logiciel à partir du modèle du domaine</h2>
     <p>
         Nous avons ensuite produit le diagramme de classe logiciel, à partir duquel nous avons créé les diagrammes de séquence pour les actions client (vérifier les vols/lignes/itinéraires, réserver un siège et payer un siège). Chaque membre de l'équipe a pris la responsabilité d'un diagramme de séquence tel que décrit dans le tableau des tâches plus haut. Pour terminer, nous avons créé le diagramme de paquets en groupant les classes appropriées ensemble.
     </p>
     <ul>
-        <li>Voici un <a href="DM1_Design.vpp">lien</a> vers les fichiers, qui sont rassemblés dans un seul projet Visual Paradigm.</li>
-        <li>Voir la section Diagrammes UML dans Visual Paradigm pour trouver les fichiers :</li>
+        <li>Voici un <a href="DM1_Design.vpp">lien</a> vers les fichiers, qui sont rassemblés dans un seul projet Visual Paradigm, tel que démontré dans la première image.</li>
+        <li>Suivent ci-dessous le diagramme de classe logiciel, les 3 diagrammes de séquence client et le diagramme de paquets.</li>
     </ul>
-    <img src="Design.jpg" width="200px" alt="Design">
+        <img src="img/Design.jpg" width="200px" alt="Design"><br><br>
+        <figcaption>Diagramme de classe logiciel</figcaption>
+        <img src="img/Design/DC_design.jpg" width="800px" alt="DC_Design"><br><br>
+        <figcaption>Diagramme séquence - Client - Vérifier les vols/lignes/itinéraires</figcaption>
+        <img src="img/Design/DS_c1.jpg" width="800px" alt="DS_c1"><br><br>
+        <figcaption>Diagramme de classe conceptuel - Client - Réserver un siège</figcaption>
+        <img src="img/Design/DS_c2.jpg" width="800px" alt="DS_c2"><br><br>
+        <figcaption>Diagramme de classe conceptuel - Client - Payer un siège</figcaption>
+        <img src="img/Design/DS_c3.jpg" width="800px" alt="DS_c3"><br><br>
+        <figcaption>Diagramme de paquets</figcaption>
+        <img src="img/Design/DP_design.jpg" width="800px" alt="DP_Design"><br><br>
         <h2>
         Tâche 3 : Rédiger, en OCL, les contraintes précédent la mention [OCL] dans l'énoncé</h2>
     <p>
