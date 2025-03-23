@@ -1,0 +1,50 @@
+# Un port est identifié par trois lettres uniques à chaque port
+context Port
+	inv:	self.id.size() = 3 and self.id.asSet().size() = 3
+		Port.allInstances()->forAll(p1, p2 | p1 <> p2 implies p1.id <> p2.id)
+
+# La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique est unique à chaque vol au sein de la même compagnie
+context Voyage
+	inv: self.id[1:2] is String and self.id[3:] is Interger
+
+# Une compagnie est identifiée par moins de six caractères uniques à chaque compagnie.
+context Compagnie
+	inv:	self.id = String and self.id.size() = 6 
+		Compagnie.allInstances()->forALl(c1, c2 | c1 <> c2 implies c1.id <> c2.id)
+
+# L'aéroport de départ et d'arrivée d'un vol doit être différent
+context Vol
+	inv: self.listePorts[1] <> self.listePorts[2] and self.listePorts.size() = 2
+
+# Tous les sièges d'une même section ont le même prix
+# Toutes les cabines d'une même section ont le même prix
+context Section
+	inv: self.quartiers->forAll(q1, q2 | q1 <> q2 implies q1.prix == q2.prix)
+
+# Un itinéraire ne peut pas durer plus de 21 jours
+# Le port de départ et d'arrivée doit être le même
+# Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas
+context Itineraire
+	inv: self.dateArrivee - self.dateDepart <= 21 jour
+	inv: self.portList[1] = self.portList[-1]
+	inv: Itineraire.allInstances()->forAll(i1, i2 | 
+		i1.paquebot == i2.paquebot 
+		implies i1.dateDepart > i2.dateArrivee
+			or i1.dateArrivee < i2.dateDepart)
+
+# Le client peut réserver un siège/cabine disponible dans un vol/trajet/itinéraire donné
+# Le client peut réserver une cabine disponible pour un itinéraire donné
+context Quartier.reserver()
+	pre: Quartier.reserve = False
+	post: Quartier.reserve = True
+
+# Un siège réservé devient assigné à un passager une fois payé: le siège est donc confirmé
+context Client::payForSeat(self.reservation)
+	post: self.reservation.seat.assigned = True
+
+
+
+
+#I made these
+context Train
+	init: self.sections = {F, E} and self.sections.forAll(disposition = S)
