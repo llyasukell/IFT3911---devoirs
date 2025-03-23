@@ -1,113 +1,270 @@
 ﻿<html>
-<head>
-    <title>IFT2255 DM1 Syriani</title>
-    <style type="text/css">
-        table
-        {
-            border: outset 2px black;
-            border-collapse: collapse;
-        }
-        th
-        {
-            border-bottom: double 2px black;
-        }
-        td
-        {
-            border-bottom: solid 1px black;
-        }
-        .first_col
-        {
-            border-right: double 2px black;
-        }
-    </style>
-</head>
-<body>
-    <h1 style="text-align: center;">
-        IFT 2255 - Devoir 1</h1>
-    <h2>
-        Information générale</h2>
-    <p>
-        <span style="font-weight: bold;">Nom: </span>Eugene Syriani
-        <br />
-        <span style="font-weight: bold;">Matricule: </span>1234
-        <br />
-        <span style="font-weight: bold;">Courriel: </span>syriani@iro.umontreal.ca
-        <br />
-        <span style="font-weight: bold;">temps mis: </span>40 heures
-    </p>
-    <p>
-        <span style="font-weight: bold;">Nom: </span>John Smith
-        <br />
-        <span style="font-weight: bold;">Matricule: </span>5678
-        <br />
-        <span style="font-weight: bold;">Courriel: </span>john.smith@something.com
-        <br />
-        <span style="font-weight: bold;">temps mis: </span>40 heures
-    </p>
-    <h2>
-        Distribution des tâches</h2>
-    <p>
-        <span style="font-weight: bold;">Soumetteur: </span>Eugene Syriani
-    </p>
-    <table cellpadding="7px">
-        <thead>
-            <tr>
-                <th class="first_col">
-                    Tâche
-                </th>
-                <th>
-                    Eugene
-                </th>
-                <th>
-                    John
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="first_col">
-                    Diagramme de classe
-                </td>
-                <td>
-                    Classes, associations, attributs (50%)
-                </td>
-                <td>
-                    Methodes, contraintes (50%)
-                </td>
-            </tr>
-            <tr>
-                <td class="first_col">
-                    Implémentation
-                </td>
-                <td>
-                    GUI (30%)
-                </td>
-                <td>
-                    Logique (70%)
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>
-        Hypothèses</h2>
-    <p>
-        J'ai supposé que...
-    </p>
-    <h2>
-        Tâche 1</h2>
-    <p>
-        Voici ma solution pour la tâche 1.
-    </p>
-    <ul>
-        <li>Voici un <a href="file1.txt">lien</a> vers les fichiers.</li>
-        <li>Images affichées directement.</li>
-    </ul>
-    <img src="http://www.desktopwallpaperhd.net/wallpapers/19/5/islands-paradise-maldive-nature-background-image-landscape-194469.jpg"
-        width="500px" alt="some image" />
-    <h2>
-        Tâche 2</h2>
-    <p>
-        ...
-    </p>
-</body>
+    <head>
+        <title>IFT2255 DM1 Syriani</title>
+        <style type="text/css">
+            table
+            {
+                border: outset 2px black;
+                border-collapse: collapse;
+            }
+            th
+            {
+                border-bottom: double 2px black;
+            }
+            td
+            {
+                border-bottom: solid 1px black;
+            }
+            .first_col
+            {
+                border-right: double 2px black;
+            }
+            .dss-imgs
+            {
+                display: flex;
+            }
+            .dss-imgs > img
+            {
+                margin: 5px 10px;
+            }
+            img
+            {
+                width: 70%;
+                border: 2px solid black;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">
+            IFT 2255 - Devoir 1
+        </h1>
+        <h2>
+            Information générale
+        </h2>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>Mattéo Caron-Mondestin
+            <br />
+            <span style="font-weight: bold;">Matricule: </span>20179528
+            <br />
+            <span style="font-weight: bold;">Courriel: </span>matteo.caron-mondestin@umontreal.ca
+            <br />
+            <span style="font-weight: bold;">temps mis: </span>40 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>Mamour Ndiaye
+            <br />
+            <span style="font-weight: bold;">Matricule: </span>20257780
+            <br />
+            <span style="font-weight: bold;">Courriel: </span>mamour.ndiaye@umontreal.ca
+            <br />
+            <span style="font-weight: bold;">temps mis: </span>40 heures
+        </p>
+        <p>
+            <span style="font-weight: bold;">Nom: </span>Lisanne Duquette
+            <br />
+            <span style="font-weight: bold;">Matricule: </span>743198
+            <br />
+            <span style="font-weight: bold;">Courriel: </span>lisanne.duquette@umontreal.ca
+            <br />
+            <span style="font-weight: bold;">temps mis: </span>40 heures
+        </p> 
+        <h2>
+            Distribution des tâches
+        </h2>
+        <p>
+            <span style="font-weight: bold;">Soumetteur: </span>Mattéo Caron-Mondestin
+        </p>
+        <table cellpadding="7px">
+            <thead>
+                <tr>
+                    <th class="first_col">
+                        Tâche
+                    </th>
+                    <th>
+                        Mattéo
+                    </th>
+                    <th>
+                        Mamour
+                    </th>
+                    <th>
+                        Lisanne
+                    </th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="first_col">
+                        Réseau de Pétri [25%]
+                    </td>
+                    <td>
+                        Statechart [30%]
+                    </td>
+                    <td>
+                        Design logiciel [25] 
+                    </td>
+                    <td>
+                        Qualité du design [20%]
+                    </td>
+                </tr>
+                <tr class="taches_matteo">
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [100%]
+                    </td>
+                    <td>
+                        [50%]
+                    </td> 
+                </tr>
+                <tr class="taches_mamour">
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [100%]
+                    </td>
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [25%]
+                    </td> 
+                </tr> 
+                <tr class="taches_lisanne">
+                    <td>
+                        [100%]
+                    </td>
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [0%]
+                    </td>
+                    <td>
+                        [25%]
+                    </td> 
+                </tr> 
+            </tbody>
+        </table>
+        <h2>
+            Tâche 1 : Réseau de Pétri
+        </h2>
+        <p>
+            Voici ma solution pour la tâche 1.
+        </p>
+        <ul>
+            <li>Voici un <a href="file1.txt">lien</a> vers les fichiers.</li>
+            <li>Images affichées directement.</li>
+        </ul>
+        <h2>
+            Tâche 2 : Statechart
+        </h2>
+        <p>
+            ...
+        </p>
+        <h2>
+            Tâche 3 : Design logiciel
+        </h2>
+        <p>
+            En utilisant le feedback reçu du DM1, nous avons amélioré notre diagramme de classes conceptuel, de séquences et de paquets ainsi que nos contraintes OCL. De plus, par les directives de ce devoir, nous avons appliqué les principes de conception vu en cours afin d'esquisser nos schémas et identifier les modules réutilisables dans un nouveau <a href="RevisionDM1/diagrammes.vpp">fichier vpp</a> mis à jour.
+        </p> 
+        <ul>
+            <li>
+                <h3>Révision du diagramme de classe</h3>
+                <img src="RevisionDM1/images/diagramme_classes.png" alt="diagramme-de-classes">
+            </li>
+            <li>
+                <h3>Révision des diagrammes de séquence</h3>
+                <div class="dss-imgs">
+                    <img src="RevisionDM1/images/dss_recherche.png" alt="dss-recherche-voyage">
+                    <img src="RevisionDM1/images/dss_reservation.png" alt="dss-reserver">
+                    <img src="RevisionDM1/images/dss_paiement.png" alt="dss-paiement">
+                </div>
+            </li>
+            <li>
+                <h3>Révision du diagramme de paquets</h3>
+                <img src="RevisionDM1/images/diagramme_paquets.png" alt="diagramme-de-paquets">
+            </li>
+            <li>
+                <h3>Révision des contraintes OCL</h3>
+                <code>
+                    # Un port est identifié par trois lettres uniques à chaque port<br>
+                    context Port<br>
+                    &emsp;inv:	self.id.size() = 3 and self.id.asSet().size() = 3<br>
+                    &emsp;&emsp;Port.allInstances()->forAll(p1, p2 | p1 <> p2 implies p1.id <> p2.id)<br><br>
+
+                    # La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique est unique à chaque vol au sein de la même compagnie<br>
+                    context Voyage<br>
+                    &emsp;inv: self.id[1:2] is String and self.id[3:] is Interger<br><br>
+
+                    # Une compagnie est identifiée par moins de six caractères uniques à chaque compagnie.<br>
+                    context Compagnie<br>
+                    &emsp;inv:	self.id = String and self.id.size() = 6<br> 
+                    &emsp;&emsp;Compagnie.allInstances()->forALl(c1, c2 | c1 <> c2 implies c1.id <> c2.id)<br><br>
+
+                    # L'aéroport de départ et d'arrivée d'un vol doit être différent<br>
+                    context Vol<br>
+                    &emsp;inv: self.listePorts[1] <> self.listePorts[2] and self.listePorts.size() = 2<br><br>
+
+                    # Tous les sièges d'une même section ont le même prix<br>
+                    # Toutes les cabines d'une même section ont le même prix<br>
+                    context Section<br>
+                    &emsp;inv: self.quartiers->forAll(q1, q2 | q1 <> q2 implies q1.prix == q2.prix)<br><br>
+
+                    # Un itinéraire ne peut pas durer plus de 21 jours<br>
+                    # Le port de départ et d'arrivée doit être le même<br>
+                    # Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas<br>
+                    context Itineraire<br>
+                    &emsp;inv: self.dateArrivee - self.dateDepart <= 21 jour<br>
+                    &emsp;inv: self.portList[1] = self.portList[-1]<br>
+                    &emsp;inv: Itineraire.allInstances()->forAll(i1, i2 |<br> 
+                    &emsp;&emsp;i1.paquebot == i2.paquebot<br> 
+                    &emsp;&emsp;implies i1.dateDepart > i2.dateArrivee<br>
+                    &emsp;&emsp;&emsp;or i1.dateArrivee < i2.dateDepart)<br><br>
+
+                    # Le client peut réserver un siège/cabine disponible dans un vol/trajet/itinéraire donné<br>
+                    # Le client peut réserver une cabine disponible pour un itinéraire donné<br>
+                    context Quartier.reserver()<br>
+                    &emsp;pre: Quartier.reserve = False<br>
+                    &emsp;post: Quartier.reserve = True<br><br>
+
+                    # Un siège réservé devient assigné à un passager une fois payé: le siège est donc confirmé<br>
+                    context Client::payForSeat(self.reservation)<br>
+                    &emsp;post: self.reservation.seat.assigned = True<br>
+                </code>
+            </li>
+            <li>
+                <h3>Identification des modules réutilisables</h3>
+                <p>Les paquets Voyage et Reservation peuvent être réutilisés par d'autres application, soit tel quel ou avec très peu d'ajustement. Le paquet Véhicule pourrait mais sûrement avec plus de modifications dépendamment de l'application. Cependant le paquet Application et UI sont spécifiques à l'implémentation du système actuel.</p>
+            </li>
+        </ul>
+        <h2>
+            Tâche 4 : Qualité du design
+        </h2>
+        <p>
+            <ul>
+                <li>
+                    <h3>Discussion du couplage et de la cohésion des modules</h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3>Discussion du fardeau des classes</h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3>Graphe IA et justification</h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3>Justification de l'application des principes de conception</h3>
+                    <p></p>
+                </li>
+            </ul>
+        </p>
+    </body>
 </html>
