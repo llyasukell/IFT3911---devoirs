@@ -322,7 +322,55 @@
                 </li>
                 <li>
                     <h3>Discussion du fardeau des classes</h3>
-                    <p></p>
+                    <p>
+                        Train {Vehicule, Section, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 9 <br>
+                        Avion {Vehicule, Section, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 9 <br>
+                        Paquebot {Vehicule, Section, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 9 <br>
+                        Vehicule {Section, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 8 <br>
+                        Section {Vehicule, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 8 <br>
+                        Quartier {Vehicule, Section, String, Integer, Float, Boolean, Reservable, GestionObjet} = 8 <br>
+                        Siege {Quartier, ClasseSiege, String, Integer, Boolean, Float, Section, Vehicule, Reservable, GestionObjet} = 10 <br>
+                        Cabine {Quartier, ClasseCabine, String, Integer, Boolean, Float, Section, Vehicule, Reservable, GestionObjet} = 10 <br>
+                        SectionAvion {Section, ClasseSiege, Vehicule, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 10 <br>
+                        SectionPaquebot {Section, ClasseCabine, Vehicule, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 10 <br>
+                        SectionTrain {Section, ClasseSiege, Vehicule, Quartier, String, Integer, Float, Boolean, GestionObjet, Reservable} = 10 <br>
+                        Reservable {} = 0 <br><br>
+                    
+                        <strong>&lt;&lt;Enumeration&gt;&gt;</strong> <br>
+                        PortType {} = 0 <br>
+                        ClasseSiege {} = 0 <br>
+                        ClasseCabine {} = 0 <br>
+                        DispositionSection {} = 0 <br><br>
+                    
+                        GestionObjet {} = 0 <br>
+                        Port {GestionObjet, String, PortType} = 3 <br>
+                        Criteres {Date, ClasseSiege, ClasseCabine, Port, GestionObjet, String, PortType, Voyage} = 8 <br>
+                        VueClient {} = 0 <br>
+                        VueAdmin {} = 0 <br>
+                        BaseDeDonnees {} = 0 <br>
+                        Systeme {Criteres, Date, ClasseSiege, ClasseCabine, Port, GestionObjet, String, PortType, Voyage} = 8 <br>
+                        Voyage {Port, GestionObjet, String, Date, PortType} = 5 <br>
+                        Client {String} = 1 <br>
+                        Vol {Voyage, Port, GestionObjet, String, Date, PortType} = 6 <br>
+                        Trajet {Voyage, Port, GestionObjet, String, Date, PortType} = 6 <br>
+                        Itineraire {Voyage, Port, GestionObjet, String, Date, PortType} = 6 <br>
+                        Compagnie {String, Float} = 2 <br>
+                        Paiement {} = 0 <br>
+                        Reservation {Integer, Boolean, Date} = 3 <br>
+                    </p>
+                    <p>
+                        En analysant le fardeau des classes, on remarque que certaines classes ont un nombre de dépendances très élevé, ce qui signifie qu'elles sont fortement liées à d'autres classes du système.  
+                        <br><br>
+                        Les classes avec le fardeau le plus élevé sont (Siege, Cabine, SectionAvion, SectionPaquebot et SectionTrain), avec une valeur de 10. Cela s'explique par le fait qu'elles dépendent de nombreuses autres classes comme **Quartier, Section, Vehicule, GestionObjet, Reservable, et plusieurs types de données primaires**. Ces classes jouent un rôle central dans la gestion des sièges et cabines des différents modes de transport.  
+                        <br><br>
+                        Ensuite, on retrouve les classes (Train, Avion et Paquebot) avec un fardeau de 9, car elles héritent de Vehicule et dépendent également de Section, Quartier, et plusieurs autres classes. Cela montre que ces classes sont essentielles pour définir les différents types de transport.  
+                        <br><br>
+                        D'autres classes comme Systeme et Criteres ont un fardeau de 8, car elles interagissent avec plusieurs éléments du système, notamment en ce qui concerne la gestion des critères et des voyages.  
+                        <br><br>
+                        À l'inverse, certaines classes ont un fardeau très faible ou nul, comme Reservable, VueClient, VueAdmin, BaseDeDonnees, Paiement, et les énumérations (PortType, ClasseSiege, ClasseCabine, DispositionSection), qui ne dépendent d'aucune autre classe.  
+                        <br><br>
+                        
+                    </p>
                 </li>
                 <li>
                     <h3>Graphe IA et justification</h3>
