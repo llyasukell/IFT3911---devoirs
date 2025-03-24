@@ -233,7 +233,22 @@
             Tâche 2 : Statechart
         </h2>
         <p>
-            ...
+            <p>Le statechart est défini sous le nom <strong>Microwave</strong> et peut être trouvé dans le fichier de remise sous ce nom.</p>
+
+            <p>Tout d’abord, il y a la gestion de la <strong>porte</strong>, qui fonctionne en parallèle avec le processus principal. Elle a trois états : <em>Init</em>, <em>Open</em> et <em>Close</em>. Lorsque la porte est ouverte (<em>Open</em>), elle empêche la cuisson, et lorsqu’elle est fermée (<em>Close</em>), elle permet au reste du système de fonctionner normalement.</p>
+            
+            <p>Ensuite, dans le <strong>processus principal</strong>, on retrouve plusieurs sous-systèmes :</p>
+            
+            <p><strong>Power (Puissance)</strong> : Ce module gère le niveau de puissance du micro-ondes avec trois états : <em>noInput</em> (0), <em>low</em> (2) et <em>high</em> (1). L’utilisateur peut ajuster la puissance avant de démarrer la cuisson.</p>
+            
+            <p><strong>Timer (Minuterie)</strong> : C’est ici que le temps de cuisson est saisi. L’état <em>noTime</em> représente l’absence de temps, tandis que <em>EnteringTime</em> permet d’ajouter des chiffres jusqu’à un maximum de 4 digits.</p>
+            
+            <p><strong>Cook (Cuisson)</strong> : Ce module gère le fonctionnement du micro-ondes. Il démarre la cuisson lorsque les conditions sont remplies (porte fermée, temps valide) et peut passer par plusieurs états : <em>cuisson</em> (en cours), <em>pause</em> (si la cuisson est suspendue), et <em>CookStop</em> (fin de cuisson). Si la porte est ouverte en cours de cuisson, l’état <em>PorteOuvert</em> prend le relais et arrête immédiatement la cuisson.</p>
+            
+            <p><strong>BEEP_HANDLER (Signal sonore)</strong> : Une fois la cuisson terminée, cet état s’occupe d’émettre un bip sonore (<em>BeepOn</em> après 5 secondes).</p>
+            
+            <p>En résumé, la gestion de la porte fonctionne indépendamment du processus principal, mais elle influence directement la cuisson. La minuterie et la puissance permettent à l’utilisateur de régler les paramètres avant de démarrer, et le système s’assure d’arrêter la cuisson si nécessaire, tout en avertissant l’utilisateur avec un bip à la fin.</p>
+            
         </p>
         <h2>
             Tâche 3 : Design logiciel
