@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="Drives_toMTL">
+            <graphics>
+                <position x="840.0" y="330.0"/>
+            </graphics>
+            <name>
+                <value>Drives_toMTL</value>
+                <graphics>
+                    <offset x="121.0" y="13.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Drives_toSS">
+            <graphics>
+                <position x="135.0" y="345.0"/>
+            </graphics>
+            <name>
+                <value>Drives_toSS</value>
+                <graphics>
+                    <offset x="-11.0" y="14.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Entrance_MTL">
+            <graphics>
+                <position x="165.0" y="75.0"/>
+            </graphics>
+            <name>
+                <value>Entrance_MTL</value>
+                <graphics>
+                    <offset x="-14.0" y="19.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Entrance_SS">
+            <graphics>
+                <position x="810.0" y="75.0"/>
+            </graphics>
+            <name>
+                <value>Entrance_SS</value>
+                <graphics>
+                    <offset x="117.0" y="12.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Exit_MTL">
+            <graphics>
+                <position x="810.0" y="600.0"/>
+            </graphics>
+            <name>
+                <value>Exit_MTL</value>
+                <graphics>
+                    <offset x="96.0" y="15.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Exit_SS">
+            <graphics>
+                <position x="165.0" y="600.0"/>
+            </graphics>
+            <name>
+                <value>Exit_SS</value>
+                <graphics>
+                    <offset x="-13.0" y="14.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Green_MTL">
+            <graphics>
+                <position x="465.0" y="165.0"/>
+            </graphics>
+            <name>
+                <value>Green_MTL</value>
+                <graphics>
+                    <offset x="100.0" y="32.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Green_SS">
+            <graphics>
+                <position x="480.0" y="495.0"/>
+            </graphics>
+            <name>
+                <value>Green_SS</value>
+                <graphics>
+                    <offset x="-2.0" y="2.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Lane_mutex">
+            <graphics>
+                <position x="465.0" y="330.0"/>
+            </graphics>
+            <name>
+                <value>Lane_mutex</value>
+                <graphics>
+                    <offset x="50.0" y="42.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Light_MTL">
+            <graphics>
+                <position x="600.0" y="105.0"/>
+            </graphics>
+            <name>
+                <value>Light_MTL</value>
+                <graphics>
+                    <offset x="5.0" y="29.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Light_SS">
+            <graphics>
+                <position x="345.0" y="525.0"/>
+            </graphics>
+            <name>
+                <value>Light_SS</value>
+                <graphics>
+                    <offset x="-14.0" y="28.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Red_MTL">
+            <graphics>
+                <position x="345.0" y="75.0"/>
+            </graphics>
+            <name>
+                <value>Red_MTL</value>
+                <graphics>
+                    <offset x="-10.0" y="10.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Red_SS">
+            <graphics>
+                <position x="600.0" y="570.0"/>
+            </graphics>
+            <name>
+                <value>Red_SS</value>
+                <graphics>
+                    <offset x="88.0" y="11.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="EntersTunnel_toMTL">
+            <graphics>
+                <position x="810.0" y="210.0"/>
+            </graphics>
+            <name>
+                <value>EntersTunnel_toMTL</value>
+                <graphics>
+                    <offset x="158.0" y="14.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="EntersTunnel_toSS">
+            <graphics>
+                <position x="165.0" y="210.0"/>
+            </graphics>
+            <name>
+                <value>EntersTunnel_toSS</value>
+                <graphics>
+                    <offset x="-10.0" y="13.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="LeavesTunnel_toMTL">
+            <graphics>
+                <position x="810.0" y="480.0"/>
+            </graphics>
+            <name>
+                <value>LeavesTunnel_toMTL</value>
+                <graphics>
+                    <offset x="162.0" y="13.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="LeavesTunnel_toSS">
+            <graphics>
+                <position x="165.0" y="480.0"/>
+            </graphics>
+            <name>
+                <value>LeavesTunnel_toSS</value>
+                <graphics>
+                    <offset x="-8.0" y="17.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="TurnsGreen_MTL">
+            <graphics>
+                <position x="345.0" y="165.0"/>
+            </graphics>
+            <name>
+                <value>TurnsGreen_MTL</value>
+                <graphics>
+                    <offset x="-9.0" y="20.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="TurnsGreen_SS">
+            <graphics>
+                <position x="600.0" y="495.0"/>
+            </graphics>
+            <name>
+                <value>TurnsGreen_SS</value>
+                <graphics>
+                    <offset x="114.0" y="18.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="TurnsRed_MTL">
+            <graphics>
+                <position x="465.0" y="35.0"/>
+            </graphics>
+            <name>
+                <value>TurnsRed_MTL</value>
+                <graphics>
+                    <offset x="0.0" y="3.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="TurnsRed_SS">
+            <graphics>
+                <position x="480.0" y="630.0"/>
+            </graphics>
+            <name>
+                <value>TurnsRed_SS</value>
+                <graphics>
+                    <offset x="132.0" y="23.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="Drives_toMTL to LeavesTunnel_toMTL" source="Drives_toMTL" target="LeavesTunnel_toMTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="848" y="356" curvePoint="false"/>
+            <arcpath id="001" x="821" y="486" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Drives_toSS to LeavesTunnel_toSS" source="Drives_toSS" target="LeavesTunnel_toSS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="150" y="371" curvePoint="false"/>
+            <arcpath id="001" x="176" y="486" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="EntersTunnel_toMTL to Drives_toMTL" source="EntersTunnel_toMTL" target="Drives_toMTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="821" y="226" curvePoint="false"/>
+            <arcpath id="001" x="848" y="327" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="EntersTunnel_toSS to Drives_toSS" source="EntersTunnel_toSS" target="Drives_toSS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="176" y="226" curvePoint="false"/>
+            <arcpath id="001" x="150" y="342" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Entrance_MTL to EntersTunnel_toSS" source="Entrance_MTL" target="EntersTunnel_toSS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="176" y="101" curvePoint="false"/>
+            <arcpath id="001" x="176" y="216" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Entrance_SS to EntersTunnel_toMTL" source="Entrance_SS" target="EntersTunnel_toMTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="821" y="101" curvePoint="false"/>
+            <arcpath id="001" x="821" y="216" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Green_MTL to TurnsRed_MTL" source="Green_MTL" target="TurnsRed_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="476" y="162" curvePoint="false"/>
+            <arcpath id="001" x="476" y="51" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Green_SS to TurnsRed_SS" source="Green_SS" target="TurnsRed_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="492" y="521" curvePoint="false"/>
+            <arcpath id="001" x="496" y="637" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Lane_mutex to EntersTunnel_toMTL" source="Lane_mutex" target="EntersTunnel_toMTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="491" y="336" curvePoint="false"/>
+            <arcpath id="001" x="806" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Lane_mutex to EntersTunnel_toSS" source="Lane_mutex" target="EntersTunnel_toSS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="463" y="336" curvePoint="false"/>
+            <arcpath id="001" x="191" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="LeavesTunnel_toMTL to Exit_MTL" source="LeavesTunnel_toMTL" target="Exit_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="821" y="496" curvePoint="false"/>
+            <arcpath id="001" x="821" y="597" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="LeavesTunnel_toMTL to Lane_mutex" source="LeavesTunnel_toMTL" target="Lane_mutex">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="806" y="492" curvePoint="false"/>
+            <arcpath id="001" x="490" y="348" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="LeavesTunnel_toSS to Exit_SS" source="LeavesTunnel_toSS" target="Exit_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="176" y="496" curvePoint="false"/>
+            <arcpath id="001" x="176" y="597" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="LeavesTunnel_toSS to Lane_mutex" source="LeavesTunnel_toSS" target="Lane_mutex">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="191" y="492" curvePoint="false"/>
+            <arcpath id="001" x="463" y="349" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Light_MTL to TurnsRed_MTL" source="Light_MTL" target="TurnsRed_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="599" y="109" curvePoint="false"/>
+            <arcpath id="001" x="491" y="47" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Light_SS to TurnsRed_SS" source="Light_SS" target="TurnsRed_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="368" y="546" curvePoint="false"/>
+            <arcpath id="001" x="486" y="636" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Red_MTL to TurnsGreen_MTL" source="Red_MTL" target="TurnsGreen_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="356" y="101" curvePoint="false"/>
+            <arcpath id="001" x="356" y="171" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Red_SS to TurnsGreen_SS" source="Red_SS" target="TurnsGreen_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="611" y="567" curvePoint="false"/>
+            <arcpath id="001" x="611" y="511" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsGreen_MTL to Green_MTL" source="TurnsGreen_MTL" target="Green_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="371" y="177" curvePoint="false"/>
+            <arcpath id="001" x="462" y="177" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsGreen_MTL to Light_SS" source="TurnsGreen_MTL" target="Light_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="356" y="181" curvePoint="false"/>
+            <arcpath id="001" x="356" y="522" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsGreen_SS to Green_SS" source="TurnsGreen_SS" target="Green_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="596" y="507" curvePoint="false"/>
+            <arcpath id="001" x="506" y="507" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsGreen_SS to Light_MTL" source="TurnsGreen_SS" target="Light_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="611" y="501" curvePoint="false"/>
+            <arcpath id="001" x="611" y="131" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsRed_MTL to Red_MTL" source="TurnsRed_MTL" target="Red_MTL">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="461" y="47" curvePoint="false"/>
+            <arcpath id="001" x="371" y="81" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="TurnsRed_SS to Red_SS" source="TurnsRed_SS" target="Red_SS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="506" y="642" curvePoint="false"/>
+            <arcpath id="001" x="599" y="589" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
