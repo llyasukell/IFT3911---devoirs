@@ -312,7 +312,11 @@
             <ul>
                 <li>
                     <h3>Discussion du couplage et de la cohésion des modules</h3>
-                    <p></p>
+                    <p>
+                        En utilisant des énumérations nous avons réduit la sophistication du diagramme, permettant une extension et modification simple. Le couplage a été réduit en protégeant le contenu des classes, en utilisant des méthodes set/get et en évitant les paramètres de contrôle.
+                        <br>
+                        Les modules sont convenablement séparés où possible afin d'augmenter la cohésion, par exemple avec l'ajout de la classe Paiement, pour éviter la cohésion logique, et des interfaces GestionObjet, pour la cohésion communicationnelle, et Réservable pour la cohésion fonctionnelle, que nous avons omises dans notre première version.
+                    </p>
                 </li>
                 <li>
                     <h3>Discussion du fardeau des classes</h3>
@@ -372,7 +376,17 @@
                 </li>
                 <li>
                     <h3>Justification de l'application des principes de conception</h3>
-                    <p></p>
+                    <p>
+                        LSP respecté. Les sous-classes de l'application ont toutes un comportement conforme à la hiérarchie de classes (un avion se comporte comme un véhicule et une cabine se comporte comme un quartier par exemple).
+                        <br>
+                        Afin de respecter le principe Open/Closed, nous avons créé les classes abstraites Voyage, Véhicule, Section et Quartier, dont le comportement pourrait être étendu par des sous classes. Par contre, malgré que l'énoncé implique plusieurs types de compagnies, nous avons opté pour une classe simple pour signifier la possibilité qu'une compagnie offre <e>plusieurs</e> types de voyages.
+                        <br>
+                        Les interfaces GestionObjet et Réservable, ainsi que les classes abstraites mentionnées plus haut, interviennent pour respecter le principe d'inversion de dépendance. Ceci assure la réutilisabilité des modules.
+                        <br>
+                        La distinction entre VueAdmin et VueClient permet de suivre le principe de responsabilité unique et de ségrégation d'interfaces malgré le fait que les deux ont des méthodes similaires. Ceci permet de séparer leur comportement et assure que des changements n'affectent pas l'autre accidentellement.
+                        <br>
+                        Le principe de réutilisation composite se voit dans la création de la classe Section par exemple, qui aurait pu être implémentée directement dans les objets Véhicules différemment des sous-classes. Cette façon de faire permet de réutiliser le code et même de l'étendre si besoin.
+                    </p>
                 </li>
             </ul>
         </p>
