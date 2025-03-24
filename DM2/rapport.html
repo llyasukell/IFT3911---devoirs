@@ -372,7 +372,33 @@
                 </li>
                 <li>
                     <h3>Graphe IA et justification</h3>
-                    <p></p>
+                    <p>
+                        Le graphe IA est construit à partir de la relation entre la stabilité et l'abstraction des packages.
+                    </p>
+                Stabilité (I = couplage efférent / (couplage afférent + couplage efférent))
+                <ul>
+                    <li>Paquet UI : C<sub>e</sub> = 2 et C<sub>a</sub> = 0, donc I = 1</li>
+                    <li>Paquet Réservation : C<sub>e</sub> = 0 et C<sub>a</sub> = 1, donc I = 0</li>
+                    <li>Paquet Application : C<sub>e</sub> = 1 et C<sub>a</sub> = 1, donc I = 0,5</li>
+                    <li>Paquet Voyage : C<sub>e</sub> = 1 et C<sub>a</sub> = 1, donc I = 0,5</li>
+                    <li>Paquet Véhicule : C<sub>e</sub> = 0 et C<sub>a</sub> = 1, donc I = 0<br><br></li>
+                </ul>
+
+                Abstraction (A = nombre de classes abstraites dans le package / nombre de classes total dans le package)
+                <ul>
+                    <li>Paquet UI : N<sub>a</sub> = 0 et N<sub>c</sub> = 2, donc A = 0</li>
+                    <li>Paquet Réservation : N<sub>a</sub> = 0 et N<sub>c</sub> = 4, donc A = 0</li>
+                    <li>Paquet Application : N<sub>a</sub> = 0 et N<sub>c</sub> = 4, donc A = 0</li>
+                    <li>Paquet Voyage : N<sub>a</sub> = 1 et N<sub>c</sub> = 6, donc A = 0,17</li>
+                    <li>Paquet Véhicule : N<sub>a</sub> = 2 et N<sub>c</sub> = 11, donc A = 0,18<br><br></li>
+                </ul>
+                <p>
+                    Il en résulte le graphe IA suivant :
+                </p>
+                <img src="RevisionDM1/images/GrapheIA.png" alt="Graphe IA">
+                <p>
+                    On peut y voir que nous aurions intérêt à augmenter l'équilibre entre la stabilité et l'abstraction, car les points du graphe se trouvent près de la "Zone of Pain". Cela signifie que les composantes stables ne sont pas abstraites et que des changements dans l'implémentation pourraient impacter de grandes portions du code.
+                </p>
                 </li>
                 <li>
                     <h3>Justification de l'application des principes de conception</h3>
