@@ -54,9 +54,14 @@ public class VueClient implements Observateur, Visiteur {
 	}
 
 	public void tripMenu() {
+		int option = 1;
+		int choix;
+		boolean quit = false;
+		Scanner scanner = App.getScanner();	
 		List<Voyage> voyages = app.getBaseDeDonnees().getVoyages();
 		for (Voyage v : voyages) {
-			System.out.println(consulterVoyage(v));
+			System.out.print(option);
+			System.out.printf(" - %s\n", v.toString());
 		}
 
 	}
