@@ -12,6 +12,7 @@ public class BaseDeDonnees {
 	private List<Voyage> voyages = new ArrayList<>();
 	private List<Compagnie> compagnies = new ArrayList<>();
 	private List<Port> ports = new ArrayList<>();
+	private List<Reservation> reservations = new ArrayList<>();
 
 	// Accesseurs
 	public List<Voyage> getVoyages() {
@@ -24,6 +25,10 @@ public class BaseDeDonnees {
 
 	public List<Port> getPorts() {
 		return ports;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
 	}
 
 	// Méthodes pour ajouter

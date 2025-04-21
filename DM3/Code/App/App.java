@@ -46,9 +46,9 @@ public class App implements Sujet {
 		App app = new App();
 		App.setInstance(app);
 		VueAdmin vueAdmin = new VueAdmin();
-		VueClient vueClient = new VueClient();
+		VueClient vueClient = new VueClient(app);
 		app.attacher(vueAdmin);
-		app.attacher(vueClient);
+		app.attacher(vueClient); 
 		app.setHistorique(new HistoriqueCommandes());
 
 		System.out.println("[SYSTÈME DE RÉSERVATION]");
@@ -204,7 +204,7 @@ public class App implements Sujet {
 				}
 			} while (choix != 0);
 		} else {
-			System.out.println("[Client] Bienvenue ! (Interface client à venir)");
+			vueClient.runCLI();
 		}
 		scanner.close();
 	}
