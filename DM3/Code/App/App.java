@@ -45,6 +45,7 @@ public class App implements Sujet {
 		System.out.println("=== DÉMARRAGE SYSTÈME DE RÉSERVATION ===");
 		App app = new App();
 		App.setInstance(app);
+		
 		VueAdmin vueAdmin = new VueAdmin();
 		VueClient vueClient = new VueClient(app);
 		app.attacher(vueAdmin);
@@ -98,10 +99,14 @@ public class App implements Sujet {
 						Commande cmd = new CreerVoyageCommande(id, depart, arrivee);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
-					case 2 -> app.getHistorique().annulerDerniereCommande();
-
+					case 2 -> {
+						app.getHistorique().annulerDerniereCommande();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
+					}
 					case 3 -> {
 						System.out.print("Nom : ");
 						String nom = scanner.nextLine();
@@ -110,8 +115,9 @@ public class App implements Sujet {
 						Commande cmd = new CreerCompagnieCommande(nom, code);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 4 -> {
 						System.out.print("Type de port (1 = Aérien, 2 = Ferroviaire, 3 = Maritime) : ");
 						int type = scanner.nextInt();
@@ -129,40 +135,44 @@ public class App implements Sujet {
 						Commande cmd = new CreerPortCommande(code, ville);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 5 -> {
 						System.out.print("Code de la compagnie à supprimer : ");
 						String code = scanner.nextLine();
 						Commande cmd = new SupprimerCompagnieCommande(code);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 6 -> {
 						System.out.print("Code du port à supprimer : ");
 						String code = scanner.nextLine();
 						Commande cmd = new SupprimerPortCommande(code);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 7 -> {
 						System.out.print("ID du voyage à supprimer : ");
 						String id = scanner.nextLine();
 						Commande cmd = new SupprimerVoyageCommande(id);
 						app.getHistorique().executerCommande(cmd);
 						app.notifier();
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 8 -> {
 						System.out.println("=== Voyages enregistrés ===");
-						VueAdmin admin = new VueAdmin();
 						for (Voyage v : App.getInstance().getBaseDeDonnees().getVoyages()) {
-							v.accept(admin);
+							v.accept(vueAdmin);
 						}
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 9 -> {
 						System.out.print("Code compagnie : ");
 						String code = scanner.nextLine();
@@ -174,8 +184,9 @@ public class App implements Sujet {
 							vueAdmin.modifierCompagnie(c, s);
 							app.notifier();
 						}
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 10 -> {
 						System.out.print("Code port : ");
 						String code = scanner.nextLine();
@@ -184,8 +195,9 @@ public class App implements Sujet {
 							vueAdmin.modifierPort(p, State.VILLE);
 							app.notifier();
 						}
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 11 -> {
 						System.out.print("ID voyage : ");
 						String id = scanner.nextLine();
@@ -197,10 +209,15 @@ public class App implements Sujet {
 							vueAdmin.modifierVoyage(v, s);
 							app.notifier();
 						}
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
 					}
-
 					case 0 -> System.out.println("Déconnexion de l’admin.");
-					default -> System.out.println("Choix invalide.");
+					default -> {
+						System.out.println("Choix invalide.");
+						System.out.println("Appuyez sur Entrée pour revenir au menu...");
+						scanner.nextLine();
+					}
 				}
 			} while (choix != 0);
 		} else {
@@ -208,6 +225,7 @@ public class App implements Sujet {
 		}
 		scanner.close();
 	}
+
 	public static VueAdmin getVueAdmin() {
 		return vueAdmin;
 	}

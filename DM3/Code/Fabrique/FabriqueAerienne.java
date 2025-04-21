@@ -17,20 +17,20 @@ public class FabriqueAerienne extends FabriqueVoyage {
 
 	@Override
 	protected Voyage fabriquerVoyage(String id, String codeDepart, String codeArrivee) {
-		// Aller chercher les ports dans la base
-		Port depart = App.getInstance().getBaseDeDonnees().rechercherPort(codeDepart);
-		Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
+	    Port depart = App.getInstance().getBaseDeDonnees().rechercherPort(codeDepart);
+	    Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
 
-		if (depart == null || arrivee == null) {
-			System.out.println("❌ Port de départ ou d'arrivée introuvable !");
-			return null;
-		}
+	    if (!(depart instanceof Aeroport) || !(arrivee instanceof Aeroport)) {
+	        System.out.println("❌ Les ports doivent être de type AÉROPORT pour un vol.");
+	        return null;
+	    }
 
-		Port[] ports = new Port[] { depart, arrivee };
-		Date maintenant = new Date();
+	    Date maintenant = new Date();
+	    Port[] ports = new Port[] { depart, arrivee };
 
-		return new Vol(id, maintenant, maintenant, ports);
+	    return new Vol(id, maintenant, maintenant, ports);
 	}
+
 
 	@Override
 	protected Port fabriquerPort(String code, String ville) {

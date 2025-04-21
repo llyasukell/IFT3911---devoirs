@@ -16,19 +16,18 @@ public class FabriqueFerroviaire extends FabriqueVoyage {
 
 	@Override
 	protected Voyage fabriquerVoyage(String id, String codeDepart, String codeArrivee) {
-		// Cherche les ports existants dans la BD
-		Port gareDepart = App.getInstance().getBaseDeDonnees().rechercherPort(codeDepart);
-		Port gareArrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
+	    Port depart = App.getInstance().getBaseDeDonnees().rechercherPort(codeDepart);
+	    Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
 
-		if (gareDepart == null || gareArrivee == null) {
-			System.out.println("❌ Port de départ ou d'arrivée introuvable !");
-			return null;
-		}
+	    if (!(depart instanceof Gare) || !(arrivee instanceof Gare)) {
+	        System.out.println("❌ Les ports doivent être de type GARE pour un trajet ferroviaire.");
+	        return null;
+	    }
 
-		Port[] gares = new Port[] { gareDepart, gareArrivee };
-		Date maintenant = new Date();
+	    Date maintenant = new Date();
+	    Port[] ports = new Port[] { depart, arrivee };
 
-		return new Trajet(id, maintenant, maintenant, gares);
+	    return new Trajet(id, maintenant, maintenant, ports);
 	}
 
 	@Override
