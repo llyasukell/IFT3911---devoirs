@@ -16,6 +16,10 @@ public class VueClient implements Observateur, Visiteur {
 	}
 
 	public void runCLI() {
+		
+	}
+
+	public void mainMenu() {
 		boolean quit = false;
 
 		while (!quit){
@@ -31,16 +35,11 @@ public class VueClient implements Observateur, Visiteur {
 			switch (choix) {
 				//db.getVoyages() will become query-able for types, dates, prices...
 				case 1 -> {
-					List<Voyage> voyages = app.getBaseDeDonnees().getVoyages();
-					for (Voyage v : voyages) {
-						System.out.println(consulterVoyage(v));
-					}
+					this.tripMenu();
 				}
+
 				case 2 -> {
-					List<Reservation> reservations = app.getBaseDeDonnees().getReservations();
-					for (Reservation r : reservations) {
-						System.out.println(r);
-					}
+					this.reservationMenu();
 				}
 				
 				case 3 -> {
@@ -51,24 +50,44 @@ public class VueClient implements Observateur, Visiteur {
 				}
 			}
 		}
-		
-
-
 
 	}
 
+	public void tripMenu() {
+		List<Voyage> voyages = app.getBaseDeDonnees().getVoyages();
+		for (Voyage v : voyages) {
+			System.out.println(consulterVoyage(v));
+		}
+
+	}
+
+	public void reservationMenu() {
+		int option = 1;
+		int choix;
+		boolean quit = false;
+		Scanner scanner = App.getScanner();		
+		List<Reservation> reservations = app.getBaseDeDonnees().getReservations();
+		for (Reservation r : reservations) {
+			System.out.print(option);
+			System.out.printf(" - %s\n", r.toString());
+		}
+		System.out.println("Choisissez une reservation à payer: ");
+
+		while (!quit) {
+			
+		}
+
+	}
 	/**
 	 * 
 	 * @param v
 	 */
 	public String consulterVoyage(Voyage v) {
-		// TODO - implement VueClient.consulterVoyage
-		return "";
+		return v.toString();
 	}
 
-	public List<Reservation> consulterReservations() {
-		// TODO - implement VueClient.consulterReservations
-		throw new UnsupportedOperationException();
+	public String consulterReservations(Reservation r) {
+		return r.toString();
 	}
 
 	/**
@@ -76,8 +95,12 @@ public class VueClient implements Observateur, Visiteur {
 	 * @param q
 	 */
 	public Reservation reserver(Quartier q) {
-		// TODO - implement VueClient.reserver
-		throw new UnsupportedOperationException();
+		if (q.estLibre()){
+			q.reserver();
+			return new Reservation(this.app.getClient(), q);
+		} else {
+			throw new Error("Ce siège n'est pas disponible");
+		}
 	}
 
 	@Override

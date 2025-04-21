@@ -5,6 +5,7 @@ import Voyage.*;
 import enums.State;
 import Compagnie.*;
 import Port.*;
+import Quartier.Quartier;
 import Fabrique.*;
 import Commande.*;
 import java.util.*;
@@ -246,4 +247,8 @@ public class App implements Sujet {
 	public static VueAdmin getVueAdmin() {
 		return vueAdmin;
 	}
+    public Client getClient() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getClient'");
+    }
 }

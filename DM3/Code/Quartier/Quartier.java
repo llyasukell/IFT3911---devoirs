@@ -1,6 +1,6 @@
 package Quartier;
 
-import Etat.EtatQuartier;
+import Etat.*;
 
 public abstract class Quartier {
 
@@ -14,6 +14,10 @@ public abstract class Quartier {
 	public void setEtat(EtatQuartier e) {
 		// TODO - implement Quartier.setEtat
 		throw new UnsupportedOperationException();
+	}
+
+	public Boolean estLibre() {
+		return this.etatActuel instanceof Libre ? true : false;
 	}
 
 	public void reserver() {

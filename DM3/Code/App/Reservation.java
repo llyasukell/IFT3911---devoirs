@@ -2,6 +2,7 @@ package App;
 
 import java.util.Date;
 
+import Quartier.*;
 import Visiteur.*;
 
 public class Reservation implements IVisitable {
@@ -9,6 +10,13 @@ public class Reservation implements IVisitable {
 	private Integer id;
 	private Boolean confirmee;
 	private Date date;
+	private Client client;
+	private Quartier quartier;
+
+	public Reservation(Client c, Quartier q){
+		this.client = c;
+		this.quartier = q;
+	}
 
 	public Paiement payer() {
 		// TODO - implement Reservation.payer
