@@ -13,7 +13,7 @@ public abstract class FabriqueVoyage {
 	// --- Singleton-like access ---
 	public static FabriqueVoyage getFabrique() {
 		if (fabrique == null) {
-			throw new IllegalStateException("❌ Fabrique non initialisée !");
+			throw new IllegalStateException(" Fabrique non initialisée !");
 		}
 		return fabrique;
 	}
@@ -26,7 +26,7 @@ public abstract class FabriqueVoyage {
 	public Voyage creerVoyage(String id, String codeDepart, String codeArrivee) {
 		// Vérifie si le voyage existe déjà
 		if (App.getInstance().getBaseDeDonnees().rechercherVoyage(id) != null) {
-			System.out.println("❌ Voyage déjà existant !");
+			System.out.println(" Voyage déjà existant !");
 			return null;
 		}
 		// Délègue à la fabrique concrète
@@ -38,7 +38,7 @@ public abstract class FabriqueVoyage {
 	// === CREATION PORT (avec vérif) ===
 	public Port creerPort(String code, String ville) {
 		if (App.getInstance().getBaseDeDonnees().rechercherPort(code) != null) {
-			System.out.println("❌ Port déjà existant !");
+			System.out.println(" Port déjà existant !");
 			return null;
 		}
 		Port p = fabriquerPort(code, ville);
@@ -57,9 +57,9 @@ public abstract class FabriqueVoyage {
 		return c;
 	}
 
-	// === Méthodes que chaque fabrique concrète doit implémenter ===
+	
 	protected abstract Voyage fabriquerVoyage(String id, String codeDepart, String codeArrivee);
 	protected abstract Port fabriquerPort(String code, String ville);
 	protected abstract Compagnie fabriquerCompagnie(String nom, String code);
-	public abstract Vehicule creerVehicule(); // pas besoin de fabriquant, juste spécialiser
+	public abstract Vehicule creerVehicule(); 
 }

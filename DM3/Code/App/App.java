@@ -74,6 +74,7 @@ public class App implements Sujet {
 				System.out.println("9 - Modifier une compagnie");
 				System.out.println("10 - Modifier un port");
 				System.out.println("11 - Modifier un voyage");
+				System.out.println("12 - Assigner un tarif à une compagnie");
 				System.out.println("0 - Quitter");
 				System.out.print("Choix : ");
 				choix = scanner.nextInt();
@@ -212,6 +213,22 @@ public class App implements Sujet {
 						System.out.println("Appuyez sur Entrée pour revenir au menu...");
 						scanner.nextLine();
 					}
+					case 12 -> {
+						System.out.print("Code compagnie : ");
+						String code = scanner.nextLine();
+						Compagnie c = app.getBaseDeDonnees().rechercherCompagnie(code);
+						if (c != null) {
+							System.out.print("Nouveau plein tarif : ");
+							float tarif = scanner.nextFloat();
+							scanner.nextLine();
+							Commande cmd = new AssignerPrixCommande(c, tarif);
+							app.getHistorique().executerCommande(cmd);
+						}
+					}
+					
+					
+					
+					
 					case 0 -> System.out.println("Déconnexion de l’admin.");
 					default -> {
 						System.out.println("Choix invalide.");

@@ -18,6 +18,7 @@ public class ModifierPortCommande implements Commande {
 	@Override
 	public void execute() {
 		App.getInstance().getVueAdmin().modifierPort(port, modification);
+		App.getInstance().notifier();
 	}
 
 	@Override

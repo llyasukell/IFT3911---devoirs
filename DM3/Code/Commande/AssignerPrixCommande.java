@@ -1,17 +1,31 @@
 package Commande;
 
-public class AssignerPrixCommande {
+import App.App;
+import Compagnie.Compagnie;
 
-	private int state;
+public class AssignerPrixCommande implements Commande {
 
+	private Compagnie compagnie;
+	private float ancienPrix;
+	private float nouveauPrix;
+
+	public AssignerPrixCommande(Compagnie compagnie, float nouveauPrix) {
+		this.compagnie = compagnie;
+		this.nouveauPrix = nouveauPrix;
+		this.ancienPrix = compagnie.getPleinTarif(); // sauvegarde pour undo
+	}
+
+	@Override
 	public void execute() {
-		// TODO - implement AssignerPrixCommande.execute
-		throw new UnsupportedOperationException();
+		compagnie.setPleinTarif(nouveauPrix);
+		System.out.println(" Tarif assigné à " + nouveauPrix + " pour " + compagnie.getCode());
+		App.getInstance().notifier();
 	}
 
+	@Override
 	public void unexecute() {
-		// TODO - implement AssignerPrixCommande.unexecute
-		throw new UnsupportedOperationException();
+		compagnie.setPleinTarif(ancienPrix);
+		System.out.println(" Tarif restauré à " + ancienPrix + " pour " + compagnie.getCode());
+		App.getInstance().notifier();
 	}
-
 }

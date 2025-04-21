@@ -21,6 +21,7 @@ public class ModifierCompagnieCommande implements Commande {
 	@Override
 	public void execute() {
 		App.getInstance().getVueAdmin().modifierCompagnie(compagnie, typeModification);
+		App.getInstance().notifier();
 	}
 
 	@Override
@@ -29,6 +30,6 @@ public class ModifierCompagnieCommande implements Commande {
 			case NOM -> compagnie.setNom(ancienNom);
 			case PRIX -> compagnie.setPleinTarif(ancienTarif);
 		}
-		System.out.println("✔️ Annulation : compagnie remise à son état précédent.");
+		System.out.println(" Annulation : compagnie remise à son état précédent.");
 	}
 }

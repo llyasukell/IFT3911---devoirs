@@ -20,6 +20,7 @@ public class ModifierVoyageCommande implements Commande {
 	@Override
 	public void execute() {
 		App.getInstance().getVueAdmin().modifierVoyage(voyage, modification);
+		App.getInstance().notifier();
 	}
 
 	@Override
