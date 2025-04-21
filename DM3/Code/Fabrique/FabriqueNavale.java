@@ -15,21 +15,21 @@ import Vehicule.Vehicule;
 public class FabriqueNavale extends FabriqueVoyage {
 
 	@Override
-	protected Voyage fabriquerVoyage(String id, String departCode, String arriveeCode) {
-		// Vérifie l'existence des ports
-		Port portDepart = App.getInstance().getBaseDeDonnees().rechercherPort(departCode);
-		Port portArrivee = App.getInstance().getBaseDeDonnees().rechercherPort(arriveeCode);
+	protected Voyage fabriquerVoyage(String id, String codeDepart, String codeArrivee) {
+	    Port depart = App.getInstance().getBaseDeDonnees().rechercherPort(codeDepart);
+	    Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
 
-		if (portDepart == null || portArrivee == null) {
-			System.out.println("❌ Port de départ ou d'arrivée introuvable !");
-			return null;
-		}
+	    if (!(depart instanceof PortNaval) || !(arrivee instanceof PortNaval)) {
+	        System.out.println("❌ Les ports doivent être de type MARITIME pour un itinéraire naval.");
+	        return null;
+	    }
 
-		Port[] ports = new Port[] { portDepart, portArrivee };
-		Date maintenant = new Date();
+	    Date maintenant = new Date();
+	    Port[] ports = new Port[] { depart, arrivee };
 
-		return new Itineraire(id, maintenant, maintenant, ports);
+	    return new Itineraire(id, maintenant, maintenant, ports);
 	}
+
 	@Override
 	protected Port fabriquerPort(String code, String ville) {
 	    return new PortNaval(code, ville);
