@@ -21,6 +21,7 @@ public class SupprimerPortCommande implements Commande {
 
 		if (supprimé != null) {
 			App.getInstance().getBaseDeDonnees().getPorts().remove(supprimé);
+			App.getInstance().notifier();
 			System.out.println("Commande : port " + code + " supprimé.");
 		} else {
 			System.out.println("Erreur : port " + code + " introuvable.");

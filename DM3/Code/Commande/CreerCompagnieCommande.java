@@ -20,6 +20,7 @@ public class CreerCompagnieCommande implements Commande {
 	public void execute() {
 		compagnie = FabriqueVoyage.getFabrique().creerCompagnie(nom, code);
 		App.getInstance().getBaseDeDonnees().ajouterCompagnie(compagnie);
+		App.getInstance().notifier();
 		System.out.println("Commande : compagnie créée -> " + compagnie);
 	}
 

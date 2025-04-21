@@ -17,9 +17,10 @@ public class CreerPortCommande implements Commande {
 
 	@Override
 	public void execute() {
-		// ⚠️ Création personnalisée avec code/ville
+		
 		port = FabriqueVoyage.getFabrique().creerPort(code, ville);
 		App.getInstance().getBaseDeDonnees().ajouterPort(port);
+		App.getInstance().notifier();
 		System.out.println("Commande : port créé -> " + port);
 	}
 

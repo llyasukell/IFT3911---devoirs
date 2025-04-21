@@ -26,6 +26,6 @@ public class CreerVoyageCommande implements Commande {
 	@Override
 	public void unexecute() {
 		System.out.println("Commande annulée : voyage supprimé (simulé)");
-		voyage = null; // pour simulation ; tu pourrais appeler App.supprimerVoyage() plus tard
+		voyage = null;
 	}
 }

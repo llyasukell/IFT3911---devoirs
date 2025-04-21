@@ -20,7 +20,7 @@ public class FabriqueNavale extends FabriqueVoyage {
 	    Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
 
 	    if (!(depart instanceof PortNaval) || !(arrivee instanceof PortNaval)) {
-	        System.out.println("❌ Les ports doivent être de type MARITIME pour un itinéraire naval.");
+	        System.out.println(" Les ports doivent être de type MARITIME pour un itinéraire naval.");
 	        return null;
 	    }
 

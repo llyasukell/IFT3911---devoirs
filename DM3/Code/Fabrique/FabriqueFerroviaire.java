@@ -20,7 +20,7 @@ public class FabriqueFerroviaire extends FabriqueVoyage {
 	    Port arrivee = App.getInstance().getBaseDeDonnees().rechercherPort(codeArrivee);
 
 	    if (!(depart instanceof Gare) || !(arrivee instanceof Gare)) {
-	        System.out.println("❌ Les ports doivent être de type GARE pour un trajet ferroviaire.");
+	        System.out.println(" Les ports doivent être de type GARE pour un trajet ferroviaire.");
 	        return null;
 	    }
 

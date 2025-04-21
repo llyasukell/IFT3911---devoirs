@@ -22,6 +22,7 @@ public class SupprimerCompagnieCommande implements Commande {
 
 		if (supprimée != null) {
 			App.getInstance().getBaseDeDonnees().getCompagnies().remove(supprimée);
+			App.getInstance().notifier();
 			System.out.println("Commande : compagnie " + code + " supprimée.");
 		} else {
 			System.out.println("Erreur : compagnie " + code + " introuvable.");

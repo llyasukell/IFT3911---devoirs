@@ -21,6 +21,7 @@ public class SupprimerVoyageCommande implements Commande {
 
 		if (supprimé != null) {
 			App.getInstance().getBaseDeDonnees().getVoyages().remove(supprimé);
+			App.getInstance().notifier();
 			System.out.println("Commande : voyage " + id + " supprimé.");
 		} else {
 			System.out.println("Erreur : voyage " + id + " introuvable.");
